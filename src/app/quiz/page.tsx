@@ -21,6 +21,12 @@ export default function Home() {
   return (
     <div>
       <h1>Quiz Page</h1>
+      <div>
+        <h2>
+          Question: {activeQuestion + 1}
+          <span>/{question.length}</span>
+        </h2>
+      </div>
     </div>
   );
 }
