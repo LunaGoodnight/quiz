@@ -20,24 +20,35 @@ export default function Home() {
   return (
     <div>
       <h1>Quiz Page</h1>
-      <div className="min-h-screen">
-        <h2>
-          Question: {activeQuestion + 1}
-          <span>/{question.length}</span>
-        </h2>
-
+      <div className="min-h-screen p-20">
         {!showResult ? (
           <div>
-            <h3>{questions[activeQuestion].question}</h3>
-            <ul>
+            <h3 className="font-bold pb-6">
+              {questions[activeQuestion].question}
+            </h3>
+            <ul className="flex gap-6 flex-col">
               {answers.map((answer, index) => {
-                return <li key={index}>{answer}</li>;
+                return (
+                  <li
+                    key={answer}
+                    className={`${
+                      selectedAnswerIndex === index ? "bg-gray-50" : ""
+                    } rounded-lg bg-blue-300 p-2 cursor-pointer`}
+                  >
+                    {answer}
+                  </li>
+                );
               })}
             </ul>
           </div>
         ) : (
           <div>adfasdf</div>
         )}
+
+        <div>
+          {" "}
+          Question: {activeQuestion + 1} <span>/{question.length}</span>
+        </div>
       </div>
     </div>
   );
