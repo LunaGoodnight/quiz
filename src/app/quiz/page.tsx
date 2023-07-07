@@ -16,18 +16,25 @@ export default function Home() {
   });
 
   const { questions } = quiz;
-  const { question, correctAnswer, id, codeBlock } = questions[activeQuestion];
+  const { question, correctAnswer, id, answers } = questions[activeQuestion];
   return (
     <div>
       <h1>Quiz Page</h1>
-      <div>
+      <div className="min-h-screen">
         <h2>
           Question: {activeQuestion + 1}
           <span>/{question.length}</span>
         </h2>
 
         {!showResult ? (
-          <div>{questions[activeQuestion].question}</div>
+          <div>
+            <h3>{questions[activeQuestion].question}</h3>
+            <ul>
+              {answers.map((answer, index) => {
+                return <li key={index}>{answer}</li>;
+              })}
+            </ul>
+          </div>
         ) : (
           <div>adfasdf</div>
         )}
