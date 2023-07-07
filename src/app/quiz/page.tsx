@@ -26,6 +26,12 @@ export default function Home() {
           Question: {activeQuestion + 1}
           <span>/{question.length}</span>
         </h2>
+
+        {!showResult ? (
+          <div>{questions[activeQuestion].question}</div>
+        ) : (
+          <div>adfasdf</div>
+        )}
       </div>
     </div>
   );
