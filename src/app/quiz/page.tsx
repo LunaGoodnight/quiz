@@ -16,8 +16,7 @@ export default function Home() {
   });
 
   const { questions } = quiz;
-  const { question, correctAnswer, id, hasCodeBlock, codeBlock } =
-    questions[activeQuestion];
+  const { question, correctAnswer, id, codeBlock } = questions[activeQuestion];
   return (
     <div>
       <h1>Quiz Page</h1>
